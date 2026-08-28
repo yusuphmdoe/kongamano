@@ -1,15 +1,4 @@
-name: CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    uses: ./.github/workflows/build.ymla# .github/workflows/ci.yml — Stable stage, segment 10
+# .github/workflows/ci.yml — Stable stage, segment 10
 # PR validation. Calls the reusable test and build workflows. Does not deploy.
 
 name: CI
@@ -25,6 +14,5 @@ concurrency:
 permissions: {}
 
 jobs:
-  
   build:
     uses: ./.github/workflows/build.yml
